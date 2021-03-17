@@ -1,0 +1,13 @@
+.wraper48{
+    min-width: 48px;
+    height: 48px;
+
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: var(--border-radius);
+    /* background-color: #c4c4c427; */
+
+}
