@@ -6,13 +6,24 @@ import Gif from '../Gif/Gif';
 import './index.css'
 
 
-const GifContainer = ({keyword}) => {
+const GifContainer = ({params}) => {
 
+    const {keyword} = params;
     const [gif, setGif] = useState([])
+    const [loading, setLoading] = useState(false)
     
     useEffect(() => {
-        getGif({keyword}).then(gifs => setGif(gifs));
+        setLoading(true)
+        getGif({keyword})
+        .then(gifs => {
+            setGif(gifs)
+            setLoading(false)
+        });
     }, [keyword])
+
+    if (loading) {
+        return <i>💤</i>
+    }
 
     return ( 
         <>

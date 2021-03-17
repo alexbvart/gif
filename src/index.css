@@ -2,6 +2,7 @@
   --height-size: 6rem;
   --border-radius: 16px;
   --base-color: #fff;
+  --gif-size: 150px
 }
 
   body{
@@ -22,4 +23,11 @@
   a{
     text-decoration: none;
     color: var(--base-color);
+  }
+
+  @media screen and (min-width: 800px) {
+
+    :root{
+      --gif-size: 250px;
+    }
   }

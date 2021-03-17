@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'wouter';
+
+
 /* CSS */
 import './index.css'
 
@@ -25,10 +28,10 @@ const Header = () => {
                 <ul className="header__tag">
                     <li>
                         <Wraper48>
-                            <a href="#" className="tag">Popular</a>
+                            <Link href="/gif/rick" className="tag">Popular</Link>
                         </Wraper48>
                         <Wraper48>
-                            <a href="#" className="tag">Sport</a>
+                            <Link href="/gif/morty" className="tag">Sport</Link>
                         </Wraper48>
                     </li>
                 </ul>

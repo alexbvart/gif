@@ -1,6 +1,8 @@
 import Header from "./Components/Header/Header";
 import GifContainer from "./Components/GifContainer/GifContainer";
-import { useState } from "react";
+import { useState } from "react"
+;
+import { Route } from "wouter";
 
 function App() {
 
@@ -8,8 +10,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <button onClick={()=> setkeyword('mapache')} >change</button>
-      <GifContainer keyword={keyword}></GifContainer>
+      <Route path="/gif/:keyword" component={GifContainer}></Route>
     </>
   );
 }
