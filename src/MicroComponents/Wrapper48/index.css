@@ -1,4 +1,4 @@
-.wraper48{
+.wrapper48{
     min-width: 48px;
     height: 48px;
 
@@ -9,5 +9,5 @@
 
     border-radius: var(--border-radius);
     /* background-color: #c4c4c427; */
-
+    backdrop-filter: blur(2px);
 }

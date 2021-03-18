@@ -2,7 +2,8 @@
   --height-size: 6rem;
   --border-radius: 16px;
   --base-color: #fff;
-  --gif-size: 150px
+  --gif-size: 150px;
+  --font-size: 18px;
 }
 
   body{
@@ -23,6 +24,12 @@
   a{
     text-decoration: none;
     color: var(--base-color);
+  }
+
+  button{
+    margin: 0;
+    padding: 0;
+    display: inline;
   }
 
   @media screen and (min-width: 800px) {

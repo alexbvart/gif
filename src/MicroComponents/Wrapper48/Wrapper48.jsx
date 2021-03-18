@@ -3,7 +3,7 @@ import React from 'react';
 /* CSS */
 import './index.css'
 
-const Wraper48 = ({children,color='#c4c4c427'}) => {
+const Wrapper48 = ({children,color='#c4c4c427'}) => {
 
     const style = {
         backgroundColor: color
@@ -11,10 +11,10 @@ const Wraper48 = ({children,color='#c4c4c427'}) => {
 
     return ( 
         <>
-            <div className="wraper48" style={style}>
+            <div className="wrapper48" style={style}>
                 {children}
             </div>
         </>
     );
 }
-export default Wraper48;
+export default Wrapper48;
