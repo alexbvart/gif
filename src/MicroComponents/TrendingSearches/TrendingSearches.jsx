@@ -12,11 +12,10 @@ import './index.css'
 import getTrendingTermsGif from 'services/getTrendingTermsGif'
 
 /* HOOKS */
-import React, { useEffect, useRef, useState } from 'react';
-import useNearScreen from 'hooks/useNearScreem';
+import React, { useEffect, useState } from 'react';
 
 
-export const TrendingSearches = () => {
+export default function TrendingSearches () {
 
     const [trends, setTrends] = useState([])
     console.log('listo ', { trends });
@@ -53,12 +52,3 @@ export const TrendingSearches = () => {
 
 
 
-export default function LazyTrendingTermsGif() {
-
-    const {isNearScreen, fromRef} = useNearScreen({distance:'500px'})
-
-
-    return <div ref={fromRef}>
-        {isNearScreen ? <TrendingSearches></TrendingSearches> : null}
-    </div>
-}

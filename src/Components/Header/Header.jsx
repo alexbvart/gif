@@ -11,7 +11,8 @@ import avatar from "static/avatar.png";
 
 /* COMPONENTS */
 import Wrapper48 from 'MicroComponents/Wrapper48/Wrapper48';
-import TrendingSearches from 'MicroComponents/TrendingSearches/TrendingSearches';
+/* import TrendingSearches from 'MicroComponents/TrendingSearches/TrendingSearches'; */
+import LazyTrendingTermsGif from 'MicroComponents/TrendingSearches/LazyTrendingTermsGif';
 
 
 const Header = () => {
@@ -32,7 +33,7 @@ const Header = () => {
                     </Wrapper48>
                 </div>
 
-                <TrendingSearches></TrendingSearches>
+                <LazyTrendingTermsGif></LazyTrendingTermsGif>
 
             </header>
 
