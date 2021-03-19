@@ -13,6 +13,8 @@
 
     overflow-y: hidden; 
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
     scroll-padding-inline-start: 2rem;

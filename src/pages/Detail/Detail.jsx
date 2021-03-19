@@ -1,7 +1,10 @@
 import React from 'react';
 import Gif from 'Components/Gif/Gif';
+
 import {useSingleGifsById}  from 'hooks/useSingleGifsById';
 import useGlobalGifs from 'hooks/useGlobalGifs';
+
+import LoaderGrid from 'Components/LoaderGrid/LoaderGrid';
 
 const Detail = ({ params }) => {
     const {id} = params;
@@ -21,7 +24,8 @@ const Detail = ({ params }) => {
     console.log('match', singleGif);
 
     if (loading) {
-        return <i>💤</i>
+        return <LoaderGrid></LoaderGrid>
+
     }
     return (
         <>

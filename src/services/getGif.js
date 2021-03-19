@@ -1,9 +1,9 @@
 import axios from "axios";
 import {API_KEY,API_URL,GIFS} from './seting'
 
-const getGif = async({keyword='gatos'}={}) => {
+const getGif = async({keyword='gatos',limit=GIFS,page=0}={}) => {
     
-    const URL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${GIFS}&offset=0&rating=g&lang=es`;
+    const URL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${limit*page}&rating=g&lang=es`;
     const {data} = await axios.get(URL)
     
     const gifs = data.data.map(oneGif => {
@@ -16,3 +16,6 @@ const getGif = async({keyword='gatos'}={}) => {
     
 }
 export default getGif;
+
+
+/* offset = gif a ignorar */

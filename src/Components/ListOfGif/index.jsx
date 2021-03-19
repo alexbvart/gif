@@ -6,6 +6,9 @@ import Gif from 'Components/Gif/Gif';
 import './index.css'
 
 const ListOfGif = ({gifs}) => {
+
+
+
     return (
         <>
             <section className="gif-grid">

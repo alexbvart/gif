@@ -4,6 +4,7 @@ import getGif from 'services/getGif';
 
 import ListOfGif from 'Components/ListOfGif';
 import { useGif } from 'hooks/useGifs';
+import LoaderGrid from 'Components/LoaderGrid/LoaderGrid';
 
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
     }, [keyword]) */
 
     if (loading) {
-        return <i>💤</i>
+        return <LoaderGrid></LoaderGrid>
     }
 
     return ( 
