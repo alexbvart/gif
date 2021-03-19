@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import getTrendingTermsGif from '../../services/getTrendingTermsGif'
 
@@ -28,7 +28,7 @@ export const TrendingSearches = () => {
                 <div className="header__tag--carrousel">
                     {
                         trends.map((trend) => (
-                            <li>
+                            <li key={trend}>
                                 <Wrapper48>
                                     <Link href={`/search/${trend}`} className="tag tag--trends">{`${trend}`}</Link>
                                 </Wrapper48>
@@ -47,13 +47,16 @@ export const TrendingSearches = () => {
 
 
 export default function LazyTrendingTermsGif() {
+    
+    const LazyTrending = useRef()
     const [show, setShow] = useState(false)
+
     useEffect(() => {
-        const onchange = (entries) => {
+        const onchange = (entries,observer) => {
             const element = entries[0]
-            console.log(element);
             if (element.isIntersecting) {
                 setShow(true)
+                observer.disconnect();
             }
         }
 
@@ -61,11 +64,12 @@ export default function LazyTrendingTermsGif() {
             rootMargin:'100px'
         })
 
-        observer.observe(document.getElementById('LazyTrending'))
+        observer.observe(LazyTrending.current)
 
-    }, [])
+        return ()=> observer.disconnect();
+    })
 
-    return <div id="LazyTrending">
+    return <div ref={LazyTrending}>
         {show ? <TrendingSearches></TrendingSearches> : null}
     </div>
 }
