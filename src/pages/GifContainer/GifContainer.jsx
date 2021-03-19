@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 
 /* CONPONENTS */
-import ListOfGif from '../../Components/ListOfGif';
+import ListOfGif from 'Components/ListOfGif';
 
 /* CUSTON HOOKS */
-import { useGif } from '../../hooks/useGifs';
+import { useGif } from 'hooks/useGifs';
 
 
 const GifContainer = ({params}) => {
@@ -18,7 +18,8 @@ const GifContainer = ({params}) => {
     }
 
     return ( 
-        <>
+        <>  
+            <h2>{decodeURI(keyword)} </h2>
             <ListOfGif gifs={gifs} />
         </>
     );

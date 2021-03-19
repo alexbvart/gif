@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import getGif from '../../services/getGif';
+import getGif from 'services/getGif';
 
-import ListOfGif from '../../Components/ListOfGif';
-import { useGif } from '../../hooks/useGifs';
+import ListOfGif from 'Components/ListOfGif';
+import { useGif } from 'hooks/useGifs';
 
 
 const Home = () => {

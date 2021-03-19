@@ -14,7 +14,6 @@ function App() {
     <>
       <Header></Header>
       <GifContextProvider>
-        <Route path="/gif/:keyword" component={GifContainer}></Route>
         <Route path="/" component={Home} ></Route>
         <Route path="/gif/:id" component={Detail} ></Route>
         <Route path="/search/:keyword" component={GifContainer}></Route>

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import GifContext from "../context/GifContext";
+import GifContext from "context/GifContext";
 
 
-import getSingleGifById from "../services/getSingleGifById";
+import getSingleGifById from "services/getSingleGifById";
 
 
 export function useSingleGifsById(GIF_ID) {

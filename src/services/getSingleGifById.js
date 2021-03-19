@@ -1,11 +1,11 @@
 import axios from "axios";
+import {API_URL,API_KEY} from './seting'
 
-const API_KEY = 'i1iZf7HEbEIcHjrc08TDnoWffAEr97sU'
 
 const getSingleGifById = async (GIF_ID) => {
 
-    const API_URL = `https://api.giphy.com/v1/gifs/${GIF_ID}?api_key=${API_KEY}`;
-    const { data } = await axios.get(API_URL)
+    const URL = `${API_URL}/gifs/${GIF_ID}?api_key=${API_KEY}`;
+    const { data } = await axios.get(URL)
 
     const { images, title, id } = data.data
     const { url } = images.downsized_medium

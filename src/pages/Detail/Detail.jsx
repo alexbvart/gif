@@ -1,7 +1,7 @@
 import React from 'react';
-import Gif from '../../Components/Gif/Gif';
-import {useSingleGifsById}  from '../../hooks/useSingleGifsById';
-import useGlobalGifs from '../../hooks/useGlobalGifs';
+import Gif from 'Components/Gif/Gif';
+import {useSingleGifsById}  from 'hooks/useSingleGifsById';
+import useGlobalGifs from 'hooks/useGlobalGifs';
 
 const Detail = ({ params }) => {
     const {id} = params;

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import GifContext from '../context/GifContext';
+import GifContext from 'context/GifContext';
 
 /* CustonHooks que lo unico que hace es devolvernos los gifs */
 

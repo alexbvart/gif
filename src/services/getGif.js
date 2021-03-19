@@ -1,12 +1,10 @@
 import axios from "axios";
-
-const API_KEY = 'i1iZf7HEbEIcHjrc08TDnoWffAEr97sU'
-const GIFS = 22
+import {API_KEY,API_URL,GIFS} from './seting'
 
 const getGif = async({keyword='gatos'}={}) => {
     
-    const API_URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${GIFS}&offset=0&rating=g&lang=es`;
-    const {data} = await axios.get(API_URL)
+    const URL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${GIFS}&offset=0&rating=g&lang=es`;
+    const {data} = await axios.get(URL)
     
     const gifs = data.data.map(oneGif => {
         const {images, title, id} = oneGif
