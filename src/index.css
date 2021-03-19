@@ -4,6 +4,7 @@
   --base-color: #fff;
   --gif-size: 150px;
   --font-size: 18px;
+  --color: #0d080375;
 }
 
   body{
@@ -28,6 +29,18 @@ body::-webkit-scrollbar-thumb{
     background-color: var(--text-color);
     background: rgba(250, 244, 240, 0.15);/* ligth+ */
     border-radius: 4px;
+}
+
+
+body.dark-theme img {
+  filter: brightness(.8) contrast(1.2);
+}
+
+/* Or apply it via media query */
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
 }
 
   ul{

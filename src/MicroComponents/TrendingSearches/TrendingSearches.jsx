@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import getTrendingTermsGif from '../../services/getTrendingTermsGif'
+
 
 /* COMPONENTS */
 import Wrapper48 from 'MicroComponents/Wrapper48/Wrapper48';
@@ -8,6 +7,13 @@ import SearchBar from 'MicroComponents/SearchBar/SearchBar';
 
 /* CSS */
 import './index.css'
+
+/* SERVICES */
+import getTrendingTermsGif from 'services/getTrendingTermsGif'
+
+/* HOOKS */
+import React, { useEffect, useRef, useState } from 'react';
+import useNearScreen from 'hooks/useNearScreem';
 
 
 export const TrendingSearches = () => {
@@ -46,30 +52,13 @@ export const TrendingSearches = () => {
 
 
 
+
 export default function LazyTrendingTermsGif() {
-    
-    const LazyTrending = useRef()
-    const [show, setShow] = useState(false)
 
-    useEffect(() => {
-        const onchange = (entries,observer) => {
-            const element = entries[0]
-            if (element.isIntersecting) {
-                setShow(true)
-                observer.disconnect();
-            }
-        }
+    const {isNearScreen, fromRef} = useNearScreen({distance:'500px'})
 
-        const observer = new IntersectionObserver(onchange,{
-            rootMargin:'100px'
-        })
 
-        observer.observe(LazyTrending.current)
-
-        return ()=> observer.disconnect();
-    })
-
-    return <div ref={LazyTrending}>
-        {show ? <TrendingSearches></TrendingSearches> : null}
+    return <div ref={fromRef}>
+        {isNearScreen ? <TrendingSearches></TrendingSearches> : null}
     </div>
 }
