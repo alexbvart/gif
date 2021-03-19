@@ -10,7 +10,7 @@ import SearchBar from 'MicroComponents/SearchBar/SearchBar';
 import './index.css'
 
 
-const TrendingSearches = () => {
+export const TrendingSearches = () => {
 
     const [trends, setTrends] = useState([])
     console.log('listo ', { trends });
@@ -24,7 +24,6 @@ const TrendingSearches = () => {
 
     return (
         <>
-
             <ul className="header__tag">
                 <div className="header__tag--carrousel">
                     {
@@ -44,4 +43,29 @@ const TrendingSearches = () => {
         </>
     );
 }
-export default TrendingSearches;
+
+
+
+export default function LazyTrendingTermsGif() {
+    const [show, setShow] = useState(false)
+    useEffect(() => {
+        const onchange = (entries) => {
+            const element = entries[0]
+            console.log(element);
+            if (element.isIntersecting) {
+                setShow(true)
+            }
+        }
+
+        const observer = new IntersectionObserver(onchange,{
+            rootMargin:'100px'
+        })
+
+        observer.observe(document.getElementById('LazyTrending'))
+
+    }, [])
+
+    return <div id="LazyTrending">
+        {show ? <TrendingSearches></TrendingSearches> : null}
+    </div>
+}
