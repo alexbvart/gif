@@ -1,8 +1,12 @@
-import React, {useState} from 'react';
-const Gif = ({url,title,id}) => {
-    return ( 
+import React, { useState } from 'react';
+import { Link } from 'wouter';
+const Gif = ({ url, title, id }) => {
+
+    return (
         <>
-            <img loading='lazy' src={url} key={id} alt={title} />
+            <Link href={`/gif/${id}`} >
+                <img loading='lazy' src={url} key={id} alt={title} />
+            </Link>
         </>
     );
 }

@@ -5,11 +5,11 @@ import Gif from '../Gif/Gif';
 /* CSS */
 import './index.css'
 
-const ListOfGif = ({gif}) => {
+const ListOfGif = ({gifs}) => {
     return (
         <>
             <section className="gif-grid">
-                {gif.map(({ id, title, url }) => (
+                {gifs.map(({ id, title, url }) => (
                     <Gif
                         id={id}
                         key={id}

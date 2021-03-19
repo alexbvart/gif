@@ -8,9 +8,8 @@ import { useGif } from '../../hooks/useGifs';
 
 const Home = () => {
 
-    const keyword = 'peppa';
-    /* const {loading, gif} = useGif({keyword}) */
-    const {loading, gif} = useGif()
+    const {loading, gifs} = useGif()
+    console.log('encontrados',gifs);
 
     /* const [gif, setGif] = useState([])
     const [loading, setLoading] = useState(false)
@@ -30,7 +29,7 @@ const Home = () => {
 
     return ( 
         <>
-            <ListOfGif gif={gif} />
+            <ListOfGif gifs={gifs} />
         </>
     );
 }

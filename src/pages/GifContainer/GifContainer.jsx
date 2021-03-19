@@ -6,14 +6,12 @@ import ListOfGif from '../../Components/ListOfGif';
 /* CUSTON HOOKS */
 import { useGif } from '../../hooks/useGifs';
 
-/* SERVICES */
-import getGif from '../../services/getGif';
 
 const GifContainer = ({params}) => {
 
     const {keyword} = params;
 
-    const {loading, gif} = useGif({keyword})
+    const {loading, gifs} = useGif({keyword})
 
     if (loading) {
         return <i>💤</i>
@@ -21,7 +19,7 @@ const GifContainer = ({params}) => {
 
     return ( 
         <>
-            <ListOfGif gif={gif} />
+            <ListOfGif gifs={gifs} />
         </>
     );
 }
