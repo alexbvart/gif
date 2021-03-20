@@ -1,5 +1,5 @@
 /* HOOKS */
-import useNearScreen from 'hooks/useNearScreem';
+import useNearScreen from 'hooks/useNearScreen';
 import Wrapper48 from 'MicroComponents/Wrapper48/Wrapper48';
 import React,{ Suspense } from 'react';
 /* import TrendingSearches from './TrendingSearches'; */

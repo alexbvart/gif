@@ -3,6 +3,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(var(--gif-size),1fr));
     grid-template-rows: repeat(auto-fill,var(--gif-size));
+    /* grid-template-rows: masonry;
+    masonry-auto-flow: next ; */
 }
 .gif-grid img{
     width: 100%;
