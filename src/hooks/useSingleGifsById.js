@@ -17,7 +17,7 @@ export function useSingleGifsById(GIF_ID) {
                 setSingleGif(gif)
                 setLoading(false)
             });
-    }, [GIF_ID])
+    }, [GIF_ID,setSingleGif])
 
     return {loading,singleGif}
 }

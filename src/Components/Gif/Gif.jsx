@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'wouter';
 const Gif = ({ url, title, id }) => {
 
     return (
         <>
             <Link href={`/gif/${id}`} >
-                <img loading='lazy' src={url} key={id} alt={title} />
+                <img loading='lazy' className="singleGif" src={url} key={id} alt={title} />
             </Link>
         </>
     );

@@ -2,7 +2,6 @@ import React from 'react';
 import Gif from 'Components/Gif/Gif';
 
 import {useSingleGifsById}  from 'hooks/useSingleGifsById';
-import useGlobalGifs from 'hooks/useGlobalGifs';
 
 import LoaderGrid from 'Components/LoaderGrid/LoaderGrid';
 

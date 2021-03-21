@@ -24,7 +24,6 @@ const GifContainer = ({ params }) => {
     })
 
     const debounceHandlerNextPage = useCallback(debounce(
-            /* () => console.log('next page'), 1500 */
             () => setPage(prevPage => prevPage + 1),500
     ),[setPage] )
 

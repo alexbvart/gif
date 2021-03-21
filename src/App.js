@@ -1,22 +1,29 @@
-import Header from "./Components/Header/Header";
-import GifContainer from "./pages/GifContainer/GifContainer";
-import { useState } from "react"
-  ;
+import React, { Suspense } from "react";
 import { Route } from "wouter";
-import Detail from "./pages/Detail/Detail";
-import Home from "./pages/Home";
+
+/* CONTEX */
 import { GifContextProvider } from "./context/GifContext";
 
-function App() {
+/* COMPONENTS */
+import Header from "./Components/Header/Header";
+const HomePage = React.lazy(()=> import('./pages/Home'))
+const DetailPage = React.lazy(()=> import('./pages/Detail/Detail'))
+const SearchlPage = React.lazy(()=> import('./pages/GifContainer/GifContainer'))
 
-  const [keyword, setkeyword] = useState('rick')
+
+
+
+
+function App() {
   return (
     <>
       <Header></Header>
       <GifContextProvider>
-        <Route path="/" component={Home} ></Route>
-        <Route path="/gif/:id" component={Detail} ></Route>
-        <Route path="/search/:keyword" component={GifContainer}></Route>
+      <Suspense fallback={null}>
+        <Route path="/" component={HomePage} ></Route>
+        <Route path="/gif/:id" component={DetailPage} ></Route>
+        <Route path="/search/:keyword" component={SearchlPage}></Route>
+      </Suspense>
       </GifContextProvider>
     </>
   );

@@ -12,7 +12,7 @@ import './index.css'
 
 const SearchBar = () => {
 
-    const [path, pushLocation] = useLocation()
+    const [path,pushLocation] = useLocation()
     const [keyword, setKeyword] = useState('')
 
     /* Funciunes para manejar el input y realizar la busqueda  {kewyword} */

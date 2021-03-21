@@ -1,6 +1,5 @@
 import { Link } from 'wouter';
 
-
 /* COMPONENTS */
 import Wrapper48 from 'MicroComponents/Wrapper48/Wrapper48';
 import SearchBar from 'MicroComponents/SearchBar/SearchBar';
@@ -21,16 +20,18 @@ export default function TrendingSearches () {
     console.log('listo ', { trends });
 
     useEffect(() => {
-        const getTrendsHere = async () => {
+        /* const getTrendsHere = async () => {
             setTrends(await getTrendingTermsGif())
         }
-        getTrendsHere()
+        getTrendsHere() */
+        getTrendingTermsGif()
+            .then(setTrends)
     }, [])
 
     return (
         <>
             <ul className="header__tag">
-                <div className="header__tag--carrousel">
+                <section className="header__tag--carrousel">
                     {
                         trends.map((trend) => (
                             <li key={trend}>
@@ -40,7 +41,7 @@ export default function TrendingSearches () {
                             </li>
                         ))
                     }
-                </div>
+                </section>
                 <li className="searchBar">
                     <SearchBar></SearchBar>
                 </li>
