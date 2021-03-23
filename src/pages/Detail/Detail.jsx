@@ -1,33 +1,39 @@
 import React from 'react';
+import { Redirect } from 'wouter';
+import { Helmet } from "react-helmet";
+
+import { useSingleGifsById } from 'hooks/useSingleGifsById';
+
 import Gif from 'Components/Gif/Gif';
-
-import {useSingleGifsById}  from 'hooks/useSingleGifsById';
-
 import LoaderGrid from 'Components/LoaderGrid/LoaderGrid';
 
+
+
 const Detail = ({ params }) => {
-    const {id} = params;
 
-    /* const gifs = useGlobalGifs() */
-    const {loading, singleGif} = useSingleGifsById(id)
-/* 
-    console.log('se borraron?',gifs);
+    const { id } = params;
+    const { loading, singleGif, isError } = useSingleGifsById(id)
 
-    if (gifs) {
-        const gif = gifs.find(singlegif => singlegif.id === params.id)
-        console.log('no hay gif en el context');
-    }else{
-        console.log('hacer una peticion');
-        const gif = singleGif
-    } */
-    console.log('match', singleGif);
+    const title = singleGif ? singleGif.title :'';
 
-    if (loading) {
-        return <LoaderGrid></LoaderGrid>
+    if (loading) return (
+        <>
+            <Helmet>
+                <title>Loading ... 👽</title>
+            </Helmet>
+            <LoaderGrid />
+        </>
+    )
+    if (isError) return <Redirect href="/404" />
+    if (!singleGif) return null
 
-    }
     return (
         <>
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={title} />
+            </Helmet>
+
             <Gif
                 id={singleGif.id}
                 key={singleGif.id}
