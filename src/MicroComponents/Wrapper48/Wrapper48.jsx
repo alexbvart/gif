@@ -17,4 +17,4 @@ const Wrapper48 = ({children,color='#c4c4c427'}) => {
         </>
     );
 }
-export default Wrapper48;
+export default  React.memo(Wrapper48);

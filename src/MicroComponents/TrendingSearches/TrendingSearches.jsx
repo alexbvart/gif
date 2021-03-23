@@ -14,7 +14,7 @@ import getTrendingTermsGif from 'services/getTrendingTermsGif'
 import React, { useEffect, useState } from 'react';
 
 
-export default function TrendingSearches () {
+function TrendingSearches () {
 
     const [trends, setTrends] = useState([])
     console.log('listo ', { trends });
@@ -51,5 +51,5 @@ export default function TrendingSearches () {
 }
 
 
-
+export default  React.memo(TrendingSearches)
 

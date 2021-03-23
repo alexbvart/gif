@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useLocation } from 'wouter';
 
 /* COMPONENTS */
@@ -16,10 +16,11 @@ const SearchBar = () => {
     const [keyword, setKeyword] = useState('')
 
     /* Funciunes para manejar el input y realizar la busqueda  {kewyword} */
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        pushLocation(`/search/${keyword}`)
-    }
+    const handleSubmit = 
+        (event) => {
+            event.preventDefault()
+            pushLocation(`/search/${keyword}`)
+        }
     const handleChange = (event) => {
         setKeyword(event.target.value)
     }
@@ -40,4 +41,4 @@ const SearchBar = () => {
         </>
     );
 }
-export default SearchBar;
+export default React.memo(SearchBar);
